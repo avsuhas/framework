@@ -67,6 +67,12 @@ public class GridDropTarget<T> extends DropTargetExtension<Grid<T>> {
      * grid, any drop after the last row in the grid will get the last row as
      * the {@link GridDropEvent#getDropTargetRow()}. If there are no rows in the
      * grid, then it will return an empty optional.
+     * <p>
+     * If using {@link DropMode#ON_GRID}, then the drop will not happen on any
+     * row, but instead just "on the grid". The target row will not be present
+     * in this case. <em>NOTE: this drop mode is always used when the grid has
+     * been sorted by the user - since the drop location would not match for any
+     * specific row in that case.</em>
      *
      * @param dropMode
      *            Drop mode that describes the allowed drop locations within the
